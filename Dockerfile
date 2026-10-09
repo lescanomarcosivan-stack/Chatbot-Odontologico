@@ -2,13 +2,11 @@
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 
+COPY src/ChatbotDental/ChatbotDental.csproj src/ChatbotDental/
+RUN dotnet restore src/ChatbotDental/ChatbotDental.csproj
+
 COPY src/ src/
-
-# Si el repositorio trae carpetas bin/obj compiladas en Windows, se borran
-# para que no choquen con la compilación de Linux.
-RUN rm -rf src/ChatbotDental/bin src/ChatbotDental/obj
-
-RUN dotnet publish src/ChatbotDental/ChatbotDental.csproj -c Release -o /app
+RUN dotnet publish src/ChatbotDental/ChatbotDental.csproj -c Release -o /app --no-restore
 
 # ---- Ejecución ----
 FROM mcr.microsoft.com/dotnet/aspnet:10.0
