@@ -1,0 +1,509 @@
+/* =========================================================
+   Estudio Dental Lapacho — estilos
+   Paleta: verde monte (cerros de Yerba Buena) + rosa lapacho
+   ========================================================= */
+
+:root {
+  --porcelana: #F3F6F4;
+  --blanco: #FFFFFF;
+  --niebla: #DCE7E2;
+  --monte: #1E4D44;
+  --monte-hondo: #133631;
+  --lapacho: #C24D7C;
+  --lapacho-hondo: #9E3562;
+  --rubor: #F7E3EB;
+  --polen: #F2C14E;
+  --tinta: #1A2623;
+  --gris: #56675F;
+  --linea: #CFDBD5;
+
+  --serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --sans: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --radio-panel: 28px;
+  --radio-msg: 18px;
+  --ancho: 1200px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--porcelana);
+  color: var(--tinta);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+h1, h2, h3 { margin: 0; font-weight: 400; }
+p { margin: 0; }
+a { color: inherit; }
+button { font: inherit; color: inherit; cursor: pointer; }
+
+:focus-visible {
+  outline: 2px solid var(--lapacho);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.oculto {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.saltar {
+  position: absolute; left: 16px; top: -60px; z-index: 10;
+  background: var(--monte); color: var(--blanco);
+  padding: 10px 16px; border-radius: 10px; text-decoration: none;
+}
+.saltar:focus { top: 12px; }
+
+/* ---------- Flor (símbolo SVG) ---------- */
+.flor-centro { fill: var(--polen); }
+
+/* ---------- Barra superior ---------- */
+.barra {
+  max-width: var(--ancho);
+  margin: 0 auto;
+  padding: 22px 32px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.marca {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none;
+  font-family: var(--serif);
+  font-size: 1.9rem;
+  line-height: 1;
+  color: var(--monte-hondo);
+}
+.marca-flor { width: 30px; height: 30px; fill: var(--lapacho); }
+
+.nav { display: flex; gap: 28px; margin-left: auto; }
+.nav a {
+  text-decoration: none;
+  color: var(--gris);
+  font-size: 0.97rem;
+}
+.nav a:hover { color: var(--monte-hondo); }
+
+.boton {
+  border: 0;
+  background: var(--monte);
+  color: var(--blanco);
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-weight: 500;
+  transition: background .2s;
+}
+.boton:hover { background: var(--monte-hondo); }
+.boton-chico { padding: 9px 18px; font-size: 0.95rem; }
+
+/* ---------- Portada ---------- */
+.portada {
+  max-width: var(--ancho);
+  margin: 0 auto;
+  padding: 40px 32px 96px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.lugar {
+  color: var(--lapacho-hondo);
+  font-weight: 500;
+  font-size: 0.97rem;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.9rem, 5.6vw, 4.9rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  color: var(--monte-hondo);
+  max-width: 11ch;
+  text-wrap: balance;
+}
+
+.bajada {
+  margin-top: 28px;
+  max-width: 46ch;
+  color: var(--gris);
+  font-size: 1.12rem;
+}
+
+.datos {
+  margin: 40px 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: start;
+  gap: 0 36px;
+  border-top: 1px solid var(--linea);
+  padding-top: 20px;
+}
+.datos dt { font-size: 0.85rem; color: var(--gris); }
+.datos dd { margin: 4px 0 0; font-weight: 500; color: var(--monte-hondo); font-size: 0.97rem; }
+
+/* La rama de lapacho detrás del chat: el único gesto decorativo de la página */
+.escenario { position: relative; }
+.portada-texto { position: relative; z-index: 1; }
+
+.rama {
+  position: absolute;
+  top: -60px; right: -36px; bottom: -60px; left: -64px;
+  width: calc(100% + 100px);
+  height: calc(100% + 120px);
+  pointer-events: none;
+  z-index: 0;
+  overflow: visible;
+}
+.rama-tallo {
+  fill: none;
+  stroke: var(--monte);
+  stroke-width: 3;
+  stroke-linecap: round;
+  opacity: .22;
+}
+.rama-tallo.fino { stroke-width: 2; }
+.rama .f { fill: var(--lapacho); opacity: .9; }
+.rama .f2, .rama .f5, .rama .f7 { fill: #DB7099; }
+.rama .f6, .rama .f8 { fill: #E9A3BF; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .rama .f {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: florecer .9s cubic-bezier(.2,.8,.2,1) both;
+  }
+  .rama .f1 { animation-delay: .15s; }
+  .rama .f2 { animation-delay: .3s; }
+  .rama .f3 { animation-delay: .45s; }
+  .rama .f4 { animation-delay: .6s; }
+  .rama .f5 { animation-delay: .75s; }
+  .rama .f6 { animation-delay: .9s; }
+  .rama .f7 { animation-delay: 1.05s; }
+  .rama .f8 { animation-delay: 1.2s; }
+}
+@keyframes florecer {
+  from { transform: scale(0) rotate(-40deg); opacity: 0; }
+  to   { transform: scale(1) rotate(0); opacity: .9; }
+}
+
+/* ---------- Chat ---------- */
+.chat {
+  position: relative;
+  z-index: 1;
+  background: var(--blanco);
+  border-radius: var(--radio-panel);
+  box-shadow:
+    0 1px 0 rgba(19, 54, 49, .04),
+    0 30px 60px -28px rgba(19, 54, 49, .38);
+  display: flex;
+  flex-direction: column;
+  height: min(640px, 78vh);
+  overflow: hidden;
+}
+
+.chat-cabecera {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  background: var(--monte-hondo);
+  color: var(--blanco);
+}
+.avatar {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--rubor);
+  display: grid; place-items: center;
+  flex: none;
+}
+.avatar svg { width: 26px; height: 26px; fill: var(--lapacho); }
+.chat-identidad { display: flex; flex-direction: column; line-height: 1.25; }
+.chat-identidad strong { font-family: var(--serif); font-weight: 400; font-size: 1.45rem; }
+.estado { font-size: 0.82rem; color: #B9D3CA; display: flex; align-items: center; gap: 6px; }
+.estado::before {
+  content: ""; width: 7px; height: 7px; border-radius: 50%; background: #7FD3A8;
+}
+.estado.sin-conexion::before { background: var(--polen); }
+
+.chat-nueva {
+  margin-left: auto;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.28);
+  color: var(--blanco);
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-size: 0.82rem;
+}
+.chat-nueva { white-space: nowrap; }
+.chat-nueva .corto { display: none; }
+.chat-nueva:hover { background: rgba(255,255,255,.1); }
+
+.chat-mensajes {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 20px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scroll-behavior: smooth;
+  background:
+    radial-gradient(circle at 100% 0, var(--rubor) 0, transparent 38%),
+    var(--blanco);
+}
+
+.msg {
+  max-width: 84%;
+  padding: 11px 15px;
+  border-radius: var(--radio-msg);
+  font-size: 0.97rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.msg p + p, .msg p + ul, .msg ul + p { margin-top: 8px; }
+.msg ul { margin: 0; padding-left: 1.1em; }
+.msg li + li { margin-top: 2px; }
+
+.msg-bot {
+  align-self: flex-start;
+  background: var(--porcelana);
+  border-bottom-left-radius: 6px;
+}
+.msg-usuario {
+  align-self: flex-end;
+  background: var(--monte);
+  color: var(--blanco);
+  border-bottom-right-radius: 6px;
+}
+.msg-error {
+  align-self: center;
+  background: transparent;
+  color: var(--lapacho-hondo);
+  font-size: 0.88rem;
+  text-align: center;
+  max-width: 92%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .msg.nuevo { animation: aparecer .28s ease-out both; }
+}
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Confirmación cuando el bot registra algo */
+.accion {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--rubor);
+  color: var(--lapacho-hondo);
+  border-radius: 14px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.accion svg { width: 18px; height: 18px; flex: none; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Indicador de escritura */
+.escribiendo { display: flex; gap: 5px; padding: 15px 16px; }
+.escribiendo span {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--gris); opacity: .35;
+  animation: punto 1.2s infinite ease-in-out;
+}
+.escribiendo span:nth-child(2) { animation-delay: .15s; }
+.escribiendo span:nth-child(3) { animation-delay: .3s; }
+@keyframes punto { 0%, 60%, 100% { opacity: .25; transform: none; } 30% { opacity: .8; transform: translateY(-3px); } }
+
+.sugerencias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 4px 20px 14px;
+}
+.sugerencias[hidden] { display: none; }
+.sugerencias button {
+  border: 1px solid var(--linea);
+  background: var(--blanco);
+  border-radius: 999px;
+  padding: 7px 13px;
+  font-size: 0.86rem;
+  color: var(--monte-hondo);
+  transition: border-color .2s, background .2s;
+}
+.sugerencias button:hover { border-color: var(--lapacho); background: var(--rubor); }
+
+.chat-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 14px 16px 16px;
+  border-top: 1px solid var(--niebla);
+}
+.chat-form textarea {
+  flex: 1;
+  resize: none;
+  border: 1px solid var(--linea);
+  border-radius: 22px;
+  padding: 11px 16px;
+  font: inherit;
+  font-size: 0.97rem;
+  line-height: 1.4;
+  max-height: 120px;
+  background: var(--porcelana);
+  color: var(--tinta);
+}
+.chat-form textarea:focus { outline: none; border-color: var(--monte); background: var(--blanco); }
+.chat-form textarea::placeholder { color: #84948D; }
+
+.enviar {
+  width: 44px; height: 44px; flex: none;
+  border-radius: 50%;
+  border: 0;
+  background: var(--lapacho);
+  display: grid; place-items: center;
+  transition: background .2s, opacity .2s;
+}
+.enviar:hover { background: var(--lapacho-hondo); }
+.enviar:disabled { opacity: .45; cursor: default; }
+.enviar svg { width: 20px; height: 20px; fill: none; stroke: var(--blanco); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- Secciones ---------- */
+.seccion {
+  max-width: var(--ancho);
+  margin: 0 auto;
+  padding: 88px 32px;
+  border-top: 1px solid var(--linea);
+}
+
+.seccion-cabecera {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 56px;
+  align-items: end;
+  margin-bottom: 48px;
+}
+h2 {
+  font-family: var(--serif);
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  color: var(--monte-hondo);
+}
+.seccion-cabecera p { color: var(--gris); max-width: 48ch; }
+
+/* Tratamientos como una carta: nombre, descripción y valor alineado */
+.carta {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 56px;
+}
+.carta li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--linea);
+}
+.carta h3 { font-family: var(--serif); font-size: 1.6rem; line-height: 1.15; color: var(--monte-hondo); }
+.carta li p { color: var(--gris); font-size: 0.95rem; margin-top: 4px; max-width: 40ch; }
+.precio { white-space: nowrap; font-weight: 500; color: var(--lapacho-hondo); font-variant-numeric: tabular-nums; }
+
+/* Equipo */
+.equipo {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
+}
+.monograma {
+  width: 76px; height: 76px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--rubor);
+  color: var(--lapacho-hondo);
+  font-family: var(--serif);
+  font-size: 1.9rem;
+  margin-bottom: 20px;
+}
+.equipo li:nth-child(2) .monograma { background: var(--niebla); color: var(--monte); }
+.equipo h3 { font-family: var(--serif); font-size: 1.75rem; color: var(--monte-hondo); }
+.equipo p { color: var(--gris); margin-top: 6px; max-width: 32ch; }
+.equipo .dias { color: var(--tinta); font-weight: 500; font-size: 0.95rem; margin-top: 12px; }
+
+/* Visitanos */
+.visita {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.visita h2 { margin-bottom: 20px; }
+.visita h3 { font-family: var(--serif); font-size: 1.45rem; color: var(--monte-hondo); }
+.visita h3 + p { margin-top: 6px; }
+.visita p + h3 { margin-top: 24px; }
+.visita p { color: var(--gris); }
+.direccion { color: var(--tinta) !important; font-size: 1.12rem; margin-bottom: 12px; }
+
+.horarios { border-collapse: collapse; width: 100%; font-size: 0.97rem; }
+.horarios th { text-align: left; font-weight: 500; padding: 14px 16px 14px 0; color: var(--monte-hondo); }
+.horarios td { padding: 14px 0 14px 12px; color: var(--gris); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.horarios tr { border-bottom: 1px solid var(--linea); }
+.horarios tr:first-child { border-top: 1px solid var(--linea); }
+
+/* Pie */
+.pie {
+  background: var(--monte-hondo);
+  color: #C5D9D1;
+  padding: 40px 32px;
+  margin-top: 40px;
+}
+.pie p { max-width: 760px; margin: 0 auto; font-size: 0.92rem; text-align: center; }
+.pie strong { color: var(--blanco); font-weight: 500; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .portada { grid-template-columns: 1fr; gap: 48px; padding-bottom: 72px; }
+  h1 { max-width: 14ch; }
+  .rama { top: -56px; left: -24px; right: -20px; bottom: -40px; width: calc(100% + 44px); height: calc(100% + 96px); }
+  .seccion-cabecera { grid-template-columns: 1fr; gap: 16px; }
+  .carta { grid-template-columns: 1fr; }
+  .equipo { grid-template-columns: 1fr 1fr; }
+  .visita { grid-template-columns: 1fr 1fr; }
+  .visita > div:first-child { grid-column: 1 / -1; }
+}
+
+@media (max-width: 640px) {
+  body { font-size: 1rem; }
+  .barra { padding: 16px; gap: 16px; }
+  .nav { display: none; }
+  .boton-chico { margin-left: auto; }
+  .portada { padding: 24px 16px 56px; }
+  .datos { grid-template-columns: 1fr 1fr; gap: 16px 24px; }
+  .datos div:last-child { grid-column: 1 / -1; }
+  .rama { display: none; }
+  .chat-nueva .largo { display: none; }
+  .chat-nueva .corto { display: inline; }
+  .chat { height: min(600px, 82vh); border-radius: 22px; }
+  .chat-nueva { padding: 6px 10px; font-size: 0.78rem; }
+  .msg { max-width: 90%; }
+  .seccion { padding: 64px 16px; }
+  .carta li { flex-direction: column; gap: 8px; }
+  .equipo { grid-template-columns: 1fr; gap: 32px; }
+  .visita { grid-template-columns: 1fr; gap: 32px; }
+  .pie { padding: 32px 16px; }
+}

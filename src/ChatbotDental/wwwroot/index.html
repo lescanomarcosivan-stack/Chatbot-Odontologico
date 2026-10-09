@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estudio Dental Lapacho, Yerba Buena</title>
+  <meta name="description" content="Consultorio odontológico en Yerba Buena, Tucumán. Pedí tu turno con Lapi, nuestro asistente virtual.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg fill='%23C24D7C'%3E%3Cellipse cx='20' cy='11' rx='6' ry='9'/%3E%3Cellipse cx='20' cy='11' rx='6' ry='9' transform='rotate(72 20 20)'/%3E%3Cellipse cx='20' cy='11' rx='6' ry='9' transform='rotate(144 20 20)'/%3E%3Cellipse cx='20' cy='11' rx='6' ry='9' transform='rotate(216 20 20)'/%3E%3Cellipse cx='20' cy='11' rx='6' ry='9' transform='rotate(288 20 20)'/%3E%3C/g%3E%3Ccircle cx='20' cy='20' r='3.5' fill='%23F2C14E'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- Flor de lapacho: cinco pétalos -->
+      <symbol id="flor" viewBox="0 0 40 40">
+        <g>
+          <ellipse cx="20" cy="11" rx="6" ry="9"/>
+          <ellipse cx="20" cy="11" rx="6" ry="9" transform="rotate(72 20 20)"/>
+          <ellipse cx="20" cy="11" rx="6" ry="9" transform="rotate(144 20 20)"/>
+          <ellipse cx="20" cy="11" rx="6" ry="9" transform="rotate(216 20 20)"/>
+          <ellipse cx="20" cy="11" rx="6" ry="9" transform="rotate(288 20 20)"/>
+        </g>
+        <circle cx="20" cy="20" r="3.5" class="flor-centro"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <a class="saltar" href="#chat-entrada">Ir al chat</a>
+
+  <header class="barra">
+    <a class="marca" href="#" aria-label="Estudio Dental Lapacho, inicio">
+      <svg class="marca-flor" aria-hidden="true"><use href="#flor"/></svg>
+      <span>Lapacho</span>
+    </a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#tratamientos">Tratamientos</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#visitanos">Horarios</a>
+    </nav>
+    <button class="boton boton-chico" type="button" data-sugerencia="Quiero pedir un turno">Pedir turno</button>
+  </header>
+
+  <main>
+    <section class="portada">
+      <div class="portada-texto">
+        <p class="lugar">Estudio Dental en Yerba Buena, Tucumán</p>
+        <h1>Tu próximo turno empieza con una conversación.</h1>
+        <p class="bajada">
+          Lapi, el asistente del estudio, responde tus dudas sobre tratamientos, obras sociales
+          y horarios, y deja registrada tu solicitud de turno. Recepción te la confirma por WhatsApp.
+        </p>
+        <dl class="datos">
+          <div><dt>Lunes a viernes</dt><dd>9 a 13 y 16 a 20 h</dd></div>
+          <div><dt>Sábados</dt><dd>9 a 13 h</dd></div>
+          <div><dt>Obras sociales</dt><dd>OSDE, Swiss Medical, Galeno y más</dd></div>
+        </dl>
+      </div>
+
+      <!-- Rama de lapacho detrás del chat -->
+      <div class="escenario">
+        <svg class="rama" viewBox="0 0 653 760" aria-hidden="true">
+          <path class="rama-tallo" d="M653 6 C540 22 380 26 250 34 C140 41 64 56 40 120 C22 170 34 260 28 360 C22 460 36 560 24 650 C18 700 14 730 10 760"/>
+          <path class="rama-tallo fino" d="M380 28 C400 12 430 4 470 6"/>
+          <path class="rama-tallo fino" d="M30 300 C14 316 10 336 18 356"/>
+          <path class="rama-tallo fino" d="M28 470 C44 492 46 520 40 540"/>
+          <use href="#flor" x="452" y="-20" width="50" height="50" class="f f1"/>
+          <use href="#flor" x="300" y="8" width="34" height="34" class="f f2"/>
+          <use href="#flor" x="584" y="18" width="60" height="60" class="f f3"/>
+          <use href="#flor" x="6" y="132" width="46" height="46" class="f f4"/>
+          <use href="#flor" x="160" y="24" width="28" height="28" class="f f5"/>
+          <use href="#flor" x="2" y="340" width="30" height="30" class="f f6"/>
+          <use href="#flor" x="4" y="530" width="52" height="52" class="f f7"/>
+          <use href="#flor" x="12" y="690" width="32" height="32" class="f f8"/>
+        </svg>
+
+        <section class="chat" aria-label="Chat con Lapi, asistente virtual">
+          <header class="chat-cabecera">
+            <span class="avatar" aria-hidden="true"><svg><use href="#flor"/></svg></span>
+            <div class="chat-identidad">
+              <strong>Lapi</strong>
+              <span class="estado" id="chat-estado">En línea, responde al instante</span>
+            </div>
+            <button class="chat-nueva" type="button" id="chat-nueva" title="Empezar una conversación nueva"><span class="largo">Nueva conversación</span><span class="corto">Nueva</span></button>
+          </header>
+
+          <div class="chat-mensajes" id="chat-mensajes" role="log" aria-live="polite" aria-relevant="additions">
+            <div class="msg msg-bot">
+              <p>¡Hola! Soy Lapi, del Estudio Dental Lapacho. ¿En qué te puedo ayudar?</p>
+            </div>
+          </div>
+
+          <div class="sugerencias" id="sugerencias">
+            <button type="button" data-sugerencia="Quiero pedir un turno para una limpieza">Pedir un turno de limpieza</button>
+            <button type="button" data-sugerencia="¿Qué obras sociales aceptan?">¿Qué obras sociales aceptan?</button>
+            <button type="button" data-sugerencia="¿Cuánto sale un blanqueamiento?">¿Cuánto sale un blanqueamiento?</button>
+            <button type="button" data-sugerencia="Me duele mucho una muela, ¿me pueden atender hoy?">Me duele una muela</button>
+          </div>
+
+          <form class="chat-form" id="chat-form" autocomplete="off">
+            <label class="oculto" for="chat-entrada">Escribí tu mensaje</label>
+            <textarea id="chat-entrada" rows="1" maxlength="600" placeholder="Escribí tu consulta…" required></textarea>
+            <button type="submit" class="enviar" id="chat-enviar" aria-label="Enviar mensaje">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <section class="seccion" id="tratamientos" aria-labelledby="t-trat">
+      <div class="seccion-cabecera">
+        <h2 id="t-trat">Tratamientos</h2>
+        <p>Valores orientativos. El presupuesto final se confirma en la primera consulta, después de revisarte.</p>
+      </div>
+      <ul class="carta">
+        <li><div><h3>Primera consulta</h3><p>Revisión completa y plan de tratamiento.</p></div><span class="precio">$25.000</span></li>
+        <li><div><h3>Limpieza y control</h3><p>Remoción de sarro y pulido. Recomendada cada seis meses.</p></div><span class="precio">$35.000</span></li>
+        <li><div><h3>Arreglo de caries</h3><p>Restauración con resina del color del diente.</p></div><span class="precio">desde $40.000</span></li>
+        <li><div><h3>Tratamiento de conducto</h3><p>Para salvar la pieza cuando la caries llegó al nervio.</p></div><span class="precio">desde $120.000</span></li>
+        <li><div><h3>Blanqueamiento</h3><p>Una sesión en consultorio, con control de sensibilidad.</p></div><span class="precio">$180.000</span></li>
+        <li><div><h3>Ortodoncia y alineadores</h3><p>Evaluación con el Dr. Medina y plan a medida.</p></div><span class="precio">desde $30.000</span></li>
+        <li><div><h3>Implantes</h3><p>Se presupuestan después de una tomografía.</p></div><span class="precio">a presupuestar</span></li>
+        <li><div><h3>Odontopediatría</h3><p>Atención para chicos desde los 2 años, con calma y sin apuro.</p></div><span class="precio">$28.000</span></li>
+      </ul>
+    </section>
+
+    <section class="seccion" id="equipo" aria-labelledby="t-equipo">
+      <div class="seccion-cabecera">
+        <h2 id="t-equipo">Quiénes te atienden</h2>
+      </div>
+      <ul class="equipo">
+        <li>
+          <span class="monograma" aria-hidden="true">VI</span>
+          <h3>Dra. Valeria Ibarra</h3>
+          <p>Odontología general, estética y blanqueamiento.</p>
+          <p class="dias">Lunes, miércoles y viernes</p>
+        </li>
+        <li>
+          <span class="monograma" aria-hidden="true">TM</span>
+          <h3>Dr. Tomás Medina</h3>
+          <p>Ortodoncia con brackets, alineadores e implantes.</p>
+          <p class="dias">Martes, jueves y sábados</p>
+        </li>
+        <li>
+          <span class="monograma" aria-hidden="true">PR</span>
+          <h3>Lic. Paula Rivas</h3>
+          <p>Odontopediatría, para chicos desde los 2 años.</p>
+          <p class="dias">Lunes y jueves por la tarde</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="seccion visita" id="visitanos" aria-labelledby="t-visita">
+      <div>
+        <h2 id="t-visita">Visitanos</h2>
+        <p class="direccion">Los Arrayanes 240, Yerba Buena, Tucumán.<br>Planta baja con rampa de acceso.</p>
+        <p>WhatsApp de recepción: (0381) 555-0142</p>
+      </div>
+      <table class="horarios">
+        <caption class="oculto">Horario de atención</caption>
+        <tbody>
+          <tr><th scope="row">Lunes a viernes</th><td>9 a 13 h</td><td>16 a 20 h</td></tr>
+          <tr><th scope="row">Sábados</th><td>9 a 13 h</td><td>—</td></tr>
+          <tr><th scope="row">Domingos y feriados</th><td colspan="2">Cerrado</td></tr>
+        </tbody>
+      </table>
+      <div>
+        <h3>Obras sociales</h3>
+        <p>OSDE, Swiss Medical, Galeno, Subsidio de Salud y OSDEPYM. Pagás solo el coseguro de tu plan.</p>
+        <h3>Formas de pago</h3>
+        <p>Efectivo, transferencia, débito y hasta 3 cuotas sin interés en tratamientos de más de $100.000.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>
+      <strong>Proyecto de demostración.</strong> Estudio Dental Lapacho es un consultorio ficticio:
+      los profesionales, precios y datos de contacto son inventados. El asistente funciona con IA
+      (Claude, de Anthropic) sobre un backend en ASP.NET Core.
+    </p>
+  </footer>
+
+  <script src="chat.js"></script>
+</body>
+</html>

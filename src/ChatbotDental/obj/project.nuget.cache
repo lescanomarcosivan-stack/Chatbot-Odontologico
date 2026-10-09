@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "MoBaS98YOvI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Marcos\\Desktop\\veamos\\Chatbot\\chatbot-odontologico\\chatbot-odontologico\\src\\ChatbotDental\\ChatbotDental.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Marcos\\.nuget\\packages\\npgsql\\8.0.5\\npgsql.8.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}

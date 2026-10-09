@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Panel de recepción, Estudio Dental Lapacho</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin">
+
+  <header class="barra">
+    <a class="marca" href="/">
+      <svg class="marca-flor" viewBox="0 0 40 40" aria-hidden="true">
+        <g><ellipse cx="20" cy="11" rx="6" ry="9"/><ellipse cx="20" cy="11" rx="6" ry="9" transform="rotate(72 20 20)"/><ellipse cx="20" cy="11" rx="6" ry="9" transform="rotate(144 20 20)"/><ellipse cx="20" cy="11" rx="6" ry="9" transform="rotate(216 20 20)"/><ellipse cx="20" cy="11" rx="6" ry="9" transform="rotate(288 20 20)"/></g>
+        <circle cx="20" cy="20" r="3.5" class="flor-centro"/>
+      </svg>
+      <span>Lapacho</span>
+    </a>
+    <span class="admin-titulo">Panel de recepción</span>
+    <button class="boton-texto" type="button" id="salir" hidden>Cerrar sesión</button>
+  </header>
+
+  <main class="admin-main">
+
+    <form class="ingreso" id="ingreso">
+      <h1>Panel de recepción</h1>
+      <p>Acá ves los turnos que pidió el asistente, los contactos y las conversaciones completas.</p>
+      <label for="clave">Contraseña</label>
+      <input id="clave" type="password" autocomplete="current-password" required>
+      <p class="ingreso-error" id="ingreso-error" role="alert"></p>
+      <button class="boton" type="submit">Ingresar</button>
+    </form>
+
+    <div class="tablero" id="tablero" hidden>
+      <div class="pestanas" role="tablist">
+        <button role="tab" aria-selected="true" data-vista="solicitudes" id="tab-solicitudes">Solicitudes <span class="cuenta" id="cuenta-solicitudes"></span></button>
+        <button role="tab" aria-selected="false" data-vista="conversaciones" id="tab-conversaciones">Conversaciones <span class="cuenta" id="cuenta-conversaciones"></span></button>
+        <button class="boton-texto actualizar" type="button" id="actualizar">Actualizar</button>
+      </div>
+
+      <section id="vista-solicitudes" role="tabpanel" aria-labelledby="tab-solicitudes">
+        <div class="filtros" id="filtros">
+          <button type="button" class="filtro activo" data-tipo="">Todas</button>
+          <button type="button" class="filtro" data-tipo="turno">Turnos</button>
+          <button type="button" class="filtro" data-tipo="consulta">Consultas</button>
+          <button type="button" class="filtro" data-tipo="humano">Para recepción</button>
+        </div>
+        <div class="tabla-envoltura">
+          <table class="tabla">
+            <thead>
+              <tr><th>Recibida</th><th>Tipo</th><th>Paciente</th><th>Teléfono</th><th>Detalle</th><th>Día pedido</th><th></th></tr>
+            </thead>
+            <tbody id="filas-solicitudes"></tbody>
+          </table>
+        </div>
+        <p class="vacio" id="vacio-solicitudes" hidden>Todavía no hay solicitudes. Cuando el asistente registre un turno o un contacto, aparece acá.</p>
+      </section>
+
+      <section id="vista-conversaciones" role="tabpanel" aria-labelledby="tab-conversaciones" hidden>
+        <div class="conversaciones">
+          <ul class="lista-conv" id="lista-conv"></ul>
+          <div class="detalle-conv" id="detalle-conv">
+            <p class="vacio">Elegí una conversación para leerla completa.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
